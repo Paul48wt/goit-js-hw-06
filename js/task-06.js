@@ -6,8 +6,10 @@ textInput.addEventListener('input', event => {
 
 textInput.addEventListener('blur', event => {
   if (countInput === Number(textInput.getAttribute('data-length'))) {
-    textInput.setAttribute('id', 'validation-input.valid');
+    textInput.classList.remove('invalid');
+    textInput.classList.add('valid');
   } else {
-    textInput.setAttribute('id', 'validation-input.invalid');
+    textInput.classList.remove('valid');
+    textInput.classList.add('invalid');
   }
 });
