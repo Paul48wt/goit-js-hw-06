@@ -8,13 +8,17 @@ const boxes = document.querySelector('#boxes');
 let amount = 0;
 function createBoxes(amount) {
   let width = 30;
+  let string = '';
   for (let i = 0; i < amount; i += 1) {
-    boxes.insertAdjacentHTML(
-      'beforeend',
-      `<div style="width: ${width}px; height: ${width}px; background-color: ${getRandomHexColor()}"></div>`,
-    );
+    // boxes.insertAdjacentHTML(
+    //   'beforeend',
+    //   `<div style="width: ${width}px; height: ${width}px; background-color: ${getRandomHexColor()}"></div>`,
+    // );
+    string += `<div style="width: ${width}px; height: ${width}px; background-color: ${getRandomHexColor()}"></div>`;
     width += 10;
   }
+  console.log(string);
+  boxes.insertAdjacentHTML('beforeend', string);
 }
 
 input.addEventListener('input', event => {
